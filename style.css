@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.page-container{
+    width: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.calculator-body{
+    height: 90%;
+    max-width: 35%;
+    background-color: black;
+    border-radius: 7%;
+    color: white;
+    flex: 1;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+.number-display {
+    display: flex;
+    width: 80%;
+    height: 15%;
+    background-color: white;
+    color: black;
+    margin: 5% auto;
+}
+
+.number-display h1{
+    font-size: 60px;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 5%;
+    margin-bottom: 3%;
+}
+
+.buttons{
+    background-color: white;
+    width: 80%;
+    height: 70%;
+    margin: 5% auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.button-row {
+    flex: 1;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.round-btn{
+    height: 4em;
+    width: 4em;
+    border-radius: 100%;
+}
+
+/* TODO: Size buttons and set up space */
