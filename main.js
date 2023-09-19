@@ -9,6 +9,14 @@ let operator = "";
 function toDisplay(numButton) {
     num_2 = num_1
     num_1 = numButton;
+
+    //TODO: Fix diplay function
+    //create new number element
+    let newDisplayNumber = document.createElement("h1");
+    newDisplayNumber.setAttribute('id', 'current-number');
+    newDisplayNumber.textContent(`${num_1}`);
+    displayNumber.replaceWith(newDisplayNumber);
+
 }
 
 function chooseOperator(operatorButton) {
@@ -18,11 +26,13 @@ function chooseOperator(operatorButton) {
 //DOM elements
 
 //display number
+let numberScreen = document.querySelector(".number-display")
 let displayNumber = document.getElementById('current-number');
 
 
 //numbers
 const one = document.getElementById("1");
+one.addEventListener('click', toDisplay.bind(null, 1))
 const two = document.getElementById("2");
 const three = document.getElementById("3");
 const four = document.getElementById("4");
