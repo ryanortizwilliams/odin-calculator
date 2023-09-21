@@ -63,4 +63,10 @@
     border-radius: 100%;
 }
 
+.long-btn {
+    height: 4em;
+    width: 8em;
+    border-radius: 100%;
+}
+
 /* TODO: Size buttons and set up space */

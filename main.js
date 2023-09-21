@@ -14,7 +14,7 @@ function toDisplay(numButton) {
     //create new number element
     let newDisplayNumber = document.createElement("h1");
     newDisplayNumber.setAttribute('id', 'current-number');
-    newDisplayNumber.textContent(`${num_1}`);
+    newDisplayNumber.textContent = `${num_1}`;
     displayNumber.replaceWith(newDisplayNumber);
 
 }
