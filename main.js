@@ -31,21 +31,41 @@ let displayNumber = document.getElementById('current-number');
 
 
 //numbers
-const one = document.getElementById("1");
-one.addEventListener('click', toDisplay.bind(null, 1))
+const zero = document.getElementById("0");
+one.addEventListener('click', toDisplay.bind(null, 1));
+const zero = document.getElementById("1");
+one.addEventListener('click', toDisplay.bind(null, 1));
+
 const two = document.getElementById("2");
+two.addEventListener('click', toDisplay.bind(null, 2));
+
 const three = document.getElementById("3");
+three.addEventListener('click', toDisplay.bind(null, 3));
+
 const four = document.getElementById("4");
+four.addEventListener('click', toDisplay.bind(null, 4));
+
 const five = document.getElementById("5");
+five.addEventListener('click', toDisplay.bind(null, 5));
+
 const six = document.getElementById("6");
+six.addEventListener('click', toDisplay.bind(null, 6));
+
 const seven = document.getElementById("7");
+seven.addEventListener('click', toDisplay.bind(null, 7));
+
 const eight = document.getElementById("8");
-const nine = document.getElementById("9")
+eight.addEventListener('click', toDisplay.bind(null, 8));
+
+const nine = document.getElementById("9");
+nine.addEventListener('click', toDisplay.bind(null, 9));
 
 //operators
 let plus = document.getElementById("plus");
 plus.addEventListener('click', chooseOperator.bind(null, 'plus'));
 
+let equal = document.getElementById("equal");
+plus.addEventListener('click', evaluate());
 
 
 // operator functions 
