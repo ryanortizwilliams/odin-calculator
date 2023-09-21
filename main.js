@@ -32,8 +32,8 @@ let displayNumber = document.getElementById('current-number');
 
 //numbers
 const zero = document.getElementById("0");
-one.addEventListener('click', toDisplay.bind(null, 1));
-const zero = document.getElementById("1");
+zero.addEventListener('click', toDisplay.bind(null, 1));
+const one = document.getElementById("1");
 one.addEventListener('click', toDisplay.bind(null, 1));
 
 const two = document.getElementById("2");
