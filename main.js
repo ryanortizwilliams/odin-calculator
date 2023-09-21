@@ -9,14 +9,11 @@ let operator = "";
 function toDisplay(numButton) {
     num_2 = num_1
     num_1 = numButton;
-
-    //TODO: Fix diplay function
-    //create new number element
+    let displayNumber = document.getElementById('current-number');
     let newDisplayNumber = document.createElement("h1");
     newDisplayNumber.setAttribute('id', 'current-number');
     newDisplayNumber.textContent = `${num_1}`;
     displayNumber.replaceWith(newDisplayNumber);
-
 }
 
 function chooseOperator(operatorButton) {
@@ -24,12 +21,6 @@ function chooseOperator(operatorButton) {
 }
 
 //DOM elements
-
-//display number
-let numberScreen = document.querySelector(".number-display")
-let displayNumber = document.getElementById('current-number');
-
-
 //numbers
 const zero = document.getElementById("0");
 zero.addEventListener('click', toDisplay.bind(null, 1));
