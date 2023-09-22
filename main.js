@@ -5,11 +5,15 @@ let firstNumber = "";
 let secondNumber = "";
 let operator = "";
 let displayNum = "";
-let operatorButtonPressed = true;
+let operatorButtonPressed = false;
 
 function toDisplay(numButton) {
-    displayNum += numButton;
-
+    if (displayNum === ""){
+        displayNum = numButton;
+    } else {
+        displayNum += numButton;
+    }
+   
     //get current display
     let displayNumber = document.getElementById('current-number');
     let newDisplayNumber = document.createElement("h1");
@@ -41,12 +45,13 @@ function evaluate() {
     num1 = Number(firstNumber);
     num2 = Number(secondNumber);
     switch(operator){
-        case 'plus' : 
+        case 'add' : 
         num1 += num2;
         // put in firstNumber 
         break;
     }
     operatorButtonPressed = false;
+    displayNum = "";
     toDisplay(String(num1));
 }
 
@@ -87,7 +92,7 @@ let plus = document.getElementById("plus");
 plus.addEventListener('click', chooseOperator.bind(null, 'add'));
 
 let equal = document.getElementById("equal");
-plus.addEventListener('click', evaluate());
+equal.addEventListener('click', evaluate);
 
 
 
