@@ -1,31 +1,60 @@
 // TODO: add listeners to each button 
 // Create add number function
 
-let num_1 = "";
-let num_2 = "";
+let firstNumber = "";
+let secondNumber = "";
 let operator = "";
-
+let displayNum = "";
+let operatorButtonPressed = true;
 
 function toDisplay(numButton) {
-    num_1 += numButton;
+    displayNum += numButton;
 
     //get current display
     let displayNumber = document.getElementById('current-number');
     let newDisplayNumber = document.createElement("h1");
     // replace with new display
     newDisplayNumber.setAttribute('id', 'current-number');
-    newDisplayNumber.textContent = `${num_1}`;
+    newDisplayNumber.textContent = `${displayNum}`;
     displayNumber.replaceWith(newDisplayNumber);
+    // place displayNum into correct number position
+    if (operatorButtonPressed) {
+        secondNumber = displayNum;
+    } else {
+        firstNumber = displayNum;
+    }
+
+    //when equal button is pressed it should set operator button pressed to false so the asnwer goes to first number
 }
 
 function chooseOperator(operatorButton) {
     operator = operatorButton
+    // following number should be second number
+    operatorButtonPressed = true;
+
+    //reset displayNum so the next button press will start a new number
+    displayNum = "";
+}
+
+function evaluate() {
+    //number strings as Numbers
+    num1 = Number(firstNumber);
+    num2 = Number(secondNumber);
+    switch(operator){
+        case 'plus' : 
+        num1 += num2;
+        // put in firstNumber 
+        break;
+    }
+    operatorButtonPressed = false;
+    toDisplay(String(num1));
 }
 
 //DOM elements
 //numbers
 const zero = document.getElementById("0");
 zero.addEventListener('click', toDisplay.bind(null, "0"));
+
 const one = document.getElementById("1");
 one.addEventListener('click', toDisplay.bind(null, "1"));
 
@@ -55,33 +84,11 @@ nine.addEventListener('click', toDisplay.bind(null, "9"));
 
 //operators
 let plus = document.getElementById("plus");
-plus.addEventListener('click', chooseOperator.bind(null, 'plus'));
+plus.addEventListener('click', chooseOperator.bind(null, 'add'));
 
 let equal = document.getElementById("equal");
 plus.addEventListener('click', evaluate());
 
 
-// operator functions 
-function add(numOne, numTwo) {
-    numOne += numTwo;
-    toDisplay(numOne)
-}
 
-function minus(numOne, numTwo) {
-    numOne -= numTwo;
-    toDisplay(numOne)
-}
-
-
-function evaluate() {
-    switch(operator){
-        case 'plus' : 
-        add(num_1, num_2);
-        break;
-    }
-}
-
-//buttons should pass a string
-// after an operation button is pressed, pass num 1 to num 2
-// if num2 exists, pressing a button should immediately reset the screen. 
-// if num2 doesnt exist yet, the first number should stay
+// TODO: get plus working properly
